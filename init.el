@@ -9,11 +9,11 @@
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 
 ;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 ;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
-;;                          ("melpa" . "http://melpa-stable.milkbox.net/packages/")))
+;;                          ("melpa" . "http://melpa.org/packages/")))
 
 
 ;; Load and activate emacs packages. Do this first so that the
@@ -102,6 +102,52 @@
 ;; Customization
 ;;;;
 
+;; Modifier keys for Mac
+;; (defvar use-mac-modifiers t
+;;   "Use Mac modifier keys? t if yes; nil if no.")
+
+;; (defun mac-mod-keys ()
+;;     "Set modifier keys on a Mac."
+    ;; (interactive)
+;;     (if use-mac-modifiers
+;;            (when (eq system-type 'darwin)
+;;              (setq mac-control-modifier 'super)
+;;              (setq mac-option-modifier 'control)
+;;              (setq mac-command-modifier 'meta)
+;;              (setq mac-right-option-modifier 'control)
+;;              (setq mac-right-command-modifier 'meta))
+;;          (when (eq system-type 'darwin)
+;;            (setq mac-control-modifier 'super)
+;;            (setq mac-option-modifier 'control)
+;;            (setq mac-command-modifier 'meta)
+;;            (setq mac-right-option-modifier 'control)
+;;            (setq mac-right-command-modifier 'meta))
+;;           ))
+
+;; (mac-mod-keys)
+
+;; "Change the modifier keys on the Mac."
+(defun change-mac-mod-keys ()
+  "Set modifier keys on a Mac."
+  (interactive)
+  (when (eq system-type 'darwin)
+    (setq mac-control-modifier 'super)
+    (setq mac-option-modifier 'control)
+    (setq mac-command-modifier 'meta)
+    (setq mac-right-option-modifier 'control)
+    (setq mac-right-command-modifier 'meta)))
+
+;; "Restore the modifier keys on the Mac."
+(defun unchange-mac-mod-keys ()
+  "Restore the modifier keys on the Mac."
+  (interactive)
+  (when (eq system-type 'darwin)
+    (setq mac-control-modifier 'control)
+    (setq mac-option-modifier 'meta)
+    (setq mac-command-modifier 'super)
+    (setq mac-right-option-modifier 'meta)
+    (setq mac-right-command-modifier 'super)))
+
 ;; Add a directory to our load path so that when you `load` things
 ;; below, Emacs knows where to look for the corresponding file.
 (add-to-list 'load-path "~/.emacs.d/customizations")
@@ -130,6 +176,10 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+
+;; Load evil-mode
+(require 'evil)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -137,13 +187,16 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(coffee-tab-width 2)
+ '(menu-bar-mode 1)
+ '(package-selected-packages
+   (quote
+    (clj-refactor typed-clojure-mode cider-decompile ac-clang evil-anzu evil-visual-mark-mode evil tagedit smex rainbow-delimiters projectile paredit markdown-mode+ magit ido-ubiquitous feature-mode exec-path-from-shell clojure-mode-extra-font-locking cider)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
- '(tool-bar-mode nil)
- '(menu-bar-mode 1))
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Lucida Console" :foundry "outline" :slant normal :weight normal :height 98 :width normal)))))
+ '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#eaeaea" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "nil" :family "Menlo")))))

@@ -10,6 +10,8 @@
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 ;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 ;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -190,7 +192,7 @@
  '(menu-bar-mode 1)
  '(package-selected-packages
    (quote
-    (clj-refactor typed-clojure-mode cider-decompile ac-clang evil-anzu evil-visual-mark-mode evil tagedit smex rainbow-delimiters projectile paredit markdown-mode+ magit ido-ubiquitous feature-mode exec-path-from-shell clojure-mode-extra-font-locking cider)))
+    (cider clj-refactor typed-clojure-mode cider-decompile ac-clang evil-anzu evil-visual-mark-mode evil tagedit smex rainbow-delimiters projectile paredit markdown-mode+ magit ido-ubiquitous feature-mode exec-path-from-shell clojure-mode-extra-font-locking)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil))

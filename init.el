@@ -192,10 +192,9 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(coffee-tab-width 2)
- '(menu-bar-mode 1)
  '(package-selected-packages
    (quote
-    (cider clj-refactor typed-clojure-mode cider-decompile ac-clang evil-anzu evil-visual-mark-mode evil tagedit smex rainbow-delimiters projectile paredit markdown-mode+ magit ido-ubiquitous feature-mode exec-path-from-shell clojure-mode-extra-font-locking)))
+    (matlab-mode cider clj-refactor typed-clojure-mode cider-decompile ac-clang evil-anzu evil-visual-mark-mode evil tagedit smex rainbow-delimiters projectile paredit markdown-mode+ magit ido-ubiquitous feature-mode exec-path-from-shell clojure-mode-extra-font-locking)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
@@ -204,4 +203,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#eaeaea" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "nil" :family "Menlo")))))
+ '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#eaeaea" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "outline" :family "Consolas")))))

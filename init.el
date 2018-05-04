@@ -194,7 +194,7 @@
  '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (matlab-mode cider clj-refactor typed-clojure-mode cider-decompile ac-clang evil-anzu evil-visual-mark-mode evil tagedit smex rainbow-delimiters projectile paredit markdown-mode+ magit ido-ubiquitous feature-mode exec-path-from-shell clojure-mode-extra-font-locking)))
+    (sequences matlab-mode cider clj-refactor typed-clojure-mode cider-decompile ac-clang evil-anzu evil-visual-mark-mode evil tagedit smex rainbow-delimiters projectile paredit markdown-mode+ magit ido-ubiquitous feature-mode exec-path-from-shell clojure-mode-extra-font-locking)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
